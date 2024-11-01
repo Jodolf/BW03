@@ -73,8 +73,7 @@ function mostraAlbum(albumList) {
                                 <a href="./album.html?id=${album.album.id}"><img src="${album.album.cover_big}" alt="${album.album.title}" class="album-cover img-fluid" /></a>
                 
                 <a href="./album.html?id=${album.album.id}">${album.album.title}</a>
-
-                <p>Artista: ${album.artist.name}</p>
+<p onclick="location.href='artist.html?id=${album.artist.id}'; event.stopPropagation();">${album.artist.name}</p>
             </div>
         </div>    
         `;
@@ -85,14 +84,3 @@ function mostraAlbum(albumList) {
 
 // Chiamata alla funzione al caricamento della pagina
 document.addEventListener("DOMContentLoaded", getRandomAlbums);
-
-//DETTAGLI ALBUM
-
-// Funzione per recuperare l'ID dall'URL e ottenere i dettagli dell'album
-function getAlbumDetails() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const albumId = urlParams.get("id");
-}
-
-// Chiamata alla funzione al caricamento della pagina
-document.addEventListener("DOMContentLoaded", getAlbumDetails);
